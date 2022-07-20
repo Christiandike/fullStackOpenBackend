@@ -57,6 +57,8 @@ app.use(
   morgan(":method :url :status :res[content-length] :body - :response-time ms")
 );
 
+app.use(express.static('build'))
+
 app.get("/api/persons", (req, res) => {
   res.json(persons);
 });
